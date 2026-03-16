@@ -1324,10 +1324,8 @@ async function renderForms(baseId, activeSlug) {
   row.innerHTML = forms.map(f => {
     const isActive = (activeSlug === f.slug) || (!activeSlug && f.slug === forms[0].slug);
     const sprite = formSpriteCache[f.slug] || '';
-    const labelLines = f.label.split('
-');
-    return `<div class="form-card ${isActive ? 'form-active' : ''}" onclick="onFormClick('${f.slug}', ${baseId})" title="${f.label.replace('
-',' ')}">
+    const labelLines = f.label.split(' ');
+    return `<div class="form-card ${isActive ? 'form-active' : ''}" onclick="onFormClick('${f.slug}', ${baseId})" title="${f.label.replace(' ',' ')}">
       ${sprite ? `<img src="${sprite}" alt="${f.label}">` : '<div style="width:60px;height:60px;background:#111;border-radius:4px"></div>'}
       <div class="form-name">${labelLines.join('<br>')}</div>
     </div>`;
