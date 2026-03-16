@@ -1,0 +1,21 @@
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Logs
+*.log
+
+# Local environment / secrets (should never exist for this project, but just in case)
+.env
+.env.local
+
+# Netlify / deployment artifacts
+.netlify/
