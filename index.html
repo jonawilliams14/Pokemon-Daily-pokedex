@@ -1252,8 +1252,7 @@ async function loadPokemonForm(slug, baseId) {
     document.getElementById('fact-text').textContent = getFact(baseId, formattedName, genus);
 
     // Flavor
-    const flavor = sp.flavor_text_entries?.find(f => f.language.name === 'en')?.flavor_text?.replace(/|
-/g,' ') || '';
+    const flavor = sp.flavor_text_entries?.find(f => f.language.name === 'en')?.flavor_text?.replace(/\f|\n|\r/g,' ') || '';
     const flavorBox = document.getElementById('flavor-box');
     flavorBox.style.borderLeftColor = `${accent}55`;
     if (flavor) {
